@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
@@ -17,32 +16,31 @@
     @csrf
 
     <label>
-        titulo:
+        Título:
         <br>
-        <input type="string" name="titulo">
+        <input type="text" name="titulo">
     </label>
     <br>
     <label>
-        isbm:
+        ISBN:
         <br>
-        <input type="string" name="isbm">
+        <input type="text" name="isbn">  
     </label>
     <br>
     <label>
-        editorial:
+        Editorial:
         <br>
-        <input type="string" name="editorial">
+        <input type="text" name="editorial">
     </label>
     <br>
     <label>
-        paginas:
+        Páginas:
         <br>
-        <input type="string" name="paginas">
+        <input type="text" name="paginas">
     </label>
     <br>
     
-    <br>
-    <button type="submit">añadir libro</button>
+    <button type="submit">Añadir libro</button>
 </form>
 </body>
 </html>

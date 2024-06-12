@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Emprendedores</title>
+  <title>Lista de Libros</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,23 +14,22 @@
     <thead>
       <tr>
         <th style="background-color: #3498db; color: white;">ID</th>
-        <th style="background-color: #3498db; color: white;">titulo</th>
-        <th style="background-color: #3498db; color: white;">isbn</th>
-        <th style="background-color: #3498db; color: white;">editorial</th>
-        <th style="background-color: #3498db; color: white;">paginas</th>
-      
+        <th style="background-color: #3498db; color: white;">Título</th>
+        <th style="background-color: #3498db; color: white;">ISBN</th>
+        <th style="background-color: #3498db; color: white;">Editorial</th>
+        <th style="background-color: #3498db; color: white;">Páginas</th>
+        <th style="background-color: #3498db; color: white;">Acciones</th>
       </tr>
     </thead>
 
     <tbody>
-      @foreach ($libro as $libro)
+      @foreach ($libros as $libro)
         <tr>
           <td>{{ $libro->id }}</td>
           <td>{{ $libro->titulo }}</td>
           <td>{{ $libro->isbn }}</td>
           <td>{{ $libro->editorial }}</td>
           <td>{{ $libro->paginas }}</td>
-       
           <td>
             <a href="{{ route('libro.show', $libro->id) }}">Mostrar</a>
             <a href="{{ route('libro.edit', $libro->id) }}">Editar</a>
@@ -44,16 +43,5 @@
       @endforeach
     </tbody>
   </table>
-
-  <div id="libro-details-modal" style="display: none;">
-    <div class="modal-content">
-      <span class="close-button" onclick="closeModal()">&times;</span>
-      <h2>Detalles del libro</h2>
-      <p id="libro-titulo"></p>
-      <p id="libro-isbn"></p>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>

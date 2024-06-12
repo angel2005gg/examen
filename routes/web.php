@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\cursos;
-use App\Models\Libro;
+
+use App\Http\Controllers\LibroController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,12 +18,15 @@ Route::delete('curso/{curso}',[CursosController::class,'destroy'])->name('curso.
 Route::get('curso/{curso}',[CursosController::class,'show'])->name('curso.show');*/
 
 
-Route::get('libro/create', [LibroController::class, 'creates']);
-Route::post('libro/store', [LibroController::class, 'store'])->name('libro.store');
-Route::get('libro/listar', [LibroController::class, 'index'])->name('libro.index');
-Route::delete('libro/{libro}', [LibroController::class, 'destroy'])->name('libro.destroy');
-Route::get('libro/{libro}', [LibroController::class, 'show'])->name('libro.show');
-Route::put('libro/{libro}', [LibroController::class, 'update'])->name('libro.update');
-Route::get('libro/{libro}/editar', [LibroController::class, 'edit'])->name('libro.edit');
+Route::get('libro/create',          [LibroController::class, 'creates']);
+Route::post('libro/store',          [LibroController::class, 'store'])->name('libro.store');
+Route::get('libro/listar',          [LibroController::class, 'index'])->name('libro.index');
+Route::delete('libro/{libro}',      [LibroController::class, 'destroy'])->name('libro.destroy');
+Route::get('libro/{libro}',         [LibroController::class, 'show'])->name('libro.show');
+Route::put('libro/{libro}',         [LibroController::class, 'update'])->name('libro.update');
+Route::get('libro/{libro}/editar',  [LibroController::class, 'edit'])->name('libro.edit');
+
+
+
 
 

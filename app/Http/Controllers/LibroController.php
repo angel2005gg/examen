@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Libro;
 
 class LibroController extends Controller
 {
@@ -15,31 +16,30 @@ class LibroController extends Controller
     { 
         $libro = new Libro();
         $libro->titulo = $request->titulo;
-        $libro->isbn = $request->isbn;
+        $libro->isbn = $request->isbn; 
         $libro->editorial = $request->editorial;
         $libro->paginas = $request->paginas;
-
-     
-
-        $libro = User::all();
-       
-       
-       
         $libro->save();
 
         return redirect()->route('libro.index');
     }
 
+
+
     public function index()
     {
-        $libro = Libro::all();
-        return view('libro.listar', ['libro' => $libro]);
+        $libros = Libro::all();
+        return view('libro.listar', ['libros' => $libros]); 
     }
+
+
     
     public function show(Libro $libro)
     {
         return view('libro.show', compact('libro'));
     }
+
+
 
     public function destroy(Libro $libro)
     {
@@ -61,6 +61,5 @@ class LibroController extends Controller
         $libro->save();
         return redirect()->route('libro.index');
     }
-
-
 }
+
